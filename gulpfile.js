@@ -17,7 +17,6 @@ gulp.task("import-library", function () {
 
     // Blueimp CSS
     gulp.src(bases.blueimp + "css/blueimp-gallery.min.css")
-        .pipe(concat("blueimp-set.css")) // concat 
         .pipe(gulp.dest(bases.distLib + "css/"));
 
     // Blueimp images / icons
