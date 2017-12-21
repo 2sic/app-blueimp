@@ -1,19 +1,18 @@
 ﻿/// <binding ProjectOpened='watch' />
-var gulp = require('gulp'),
-    concat = require("gulp-concat");
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 
 var bases = {
     blueimp: "bower_components/blueimp/",
     src: "src/",
-    distLib: "dist/lib/blueimp/",
-    distApp: "dist/app/"
+    distLib: "dist/lib/blueimp/"
 };
 
 // task
 gulp.task("import-library", function () {
     // BlueImp JS - merge if I have many...
-    gulp.src([bases.blueimp + "js/jquery.blueimp-gallery.min.js"]) 
-        .pipe(concat('blueimp-set.js')) // concat 
+    gulp.src([bases.blueimp + "js/jquery.blueimp-gallery.min.js"])
         .pipe(gulp.dest(bases.distLib + "js/"));
 
     // Blueimp CSS
@@ -24,14 +23,29 @@ gulp.task("import-library", function () {
     // Blueimp images / icons
     gulp.src(bases.blueimp + "img/*.*")
         .pipe(gulp.dest(bases.distLib + "img/"));
-
 });
 
-gulp.task("build-css", function() {
-    gulp.src(bases.src + "*.css")
-        .pipe(gulp.dest(bases.distApp));
+var sourceFiles = ['./src/**/*.scss'];
+
+gulp.task('watch-sass', function () {
+	gulp.watch(sourceFiles, ['sass']);
 });
 
-gulp.task("watch", function() {
-    gulp.watch(bases.src + "*.*", ["build-css"]);
+gulp.task('watch-javascript', function () {
+	gulp.watch(['./src/**.js'], ['javascript']);
 });
+
+gulp.task('sass', function () {
+  return gulp.src(sourceFiles)
+	.pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+	.pipe(sourcemaps.write('.', { sourceRoot: '../src/' }))
+    .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('javascript', function() {
+	return gulp.src('./src/**.js')
+		.pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('default', ['sass', 'javascript', 'watch-sass', 'watch-javascript']);
