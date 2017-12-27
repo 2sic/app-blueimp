@@ -3,6 +3,7 @@
 <script type="text/javascript" src="@App.Path/dist/lib/blueimp/js/jquery.blueimp-gallery.min.js" data-enableoptimizations="true"></script>
 <link rel="stylesheet" href="@App.Path/dist/styles.css" data-enableoptimizations="true" />
 
+
 @{
     var album = Content;
     var pageHandler = HttpContext.Current.Handler as Page;
@@ -85,30 +86,33 @@
             @Html.Raw(album.Introduction)
         </div>
 
-       <div class="ga-wrapper">
-            <div class="ga-list ga-list-images">
-                @foreach (var pic in images)
-                {
-                    <div class="ga-image sc-element">
+       <div class="ga-wrapper row auto-clear">
+        @foreach (var pic in images)
+            {
+            <div class="ga-tiles col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="ga-image sc-element">
 
-                        @* The following code block will either offer to edit existing metadata,
-                            or create an "add-metadata" toolbar prefilled with this files ID *@
-                        @if (Permissions.UserMayEditContent)
+                    @* The following code block will either offer to edit existing metadata,
+                        or create an "add-metadata" toolbar prefilled with this files ID *@
+                    @if (Permissions.UserMayEditContent)
+                    {
+                        <ul class="sc-menu" data-toolbar='{ "action": "metadata", "entityId": @pic.Metadata.EntityId,
+                        "contentType":"ImageMetadata", "metadata":{"key":"file:@pic.FileId"}}'></ul>
+                    }
+                    <a href="@pic.Url?w=@App.Settings.LightboxImageWidth&h=@App.Settings.LightboxImageHeight&mode=max" title="@(((dynamic)pic.Metadata).Title)" data-gallery="#blueimp-gallery-@Dnn.Module.ModuleID">
+                        <span class="ga-img">
+                        <span class="ga-img-overlay"><i class="glyphicon glyphicon-search"></i></span>
+                        <img class="img-responsive" src="@pic.Url?w=@App.Settings.ImageThumbnailWidth&h=@App.Settings.ImageThumbnailHeight&mode=crop&scale=both&quality=80" alt="@(((dynamic)pic.Metadata).Title)" />
+                        </span>
+                        @if (albSettings.ShowImageTitle && pic.HasMetadata)
                         {
-                            <ul class="sc-menu" data-toolbar='{ "action": "metadata", "entityId": @pic.Metadata.EntityId,
-                            "contentType":"ImageMetadata", "metadata":{"key":"file:@pic.FileId"}}'></ul>
+                            <span class="ga-title">@(((dynamic)pic.Metadata).Title)</span>
                         }
-                        <a href="@pic.Url?w=@App.Settings.LightboxImageWidth&h=@App.Settings.LightboxImageHeight&mode=max" title="@(((dynamic)pic.Metadata).Title)" data-gallery="#blueimp-gallery-@Dnn.Module.ModuleID">
-                            <img src="@pic.Url?w=@App.Settings.ImageThumbnailWidth&h=@App.Settings.ImageThumbnailHeight&mode=crop" alt="@(((dynamic)pic.Metadata).Title)" />
-                            @if (albSettings.ShowImageTitle && pic.HasMetadata)
-                            {
-                                <span>@(((dynamic)pic.Metadata).Title)</span>
-                            }
-                        </a>
+                    </a>
 
-                    </div>
-                }
+                </div>
             </div>
+            }
         </div>
 
         <script type="text/javascript">
