@@ -34,7 +34,7 @@
     
         var albSettings = album.Presentation;
 
-        IEnumerable<ToSic.SexyContent.Adam.AdamFile> images = AsAdam(album, "Images").Files;
+        IEnumerable<ToSic.Sxc.Adam.File > images = AsAdam(album, "Images").Files;
 
         // Handle sorting 
         switch ((string)albSettings.SortMode)
@@ -52,16 +52,16 @@
                 images = images.OrderBy(c => !c.HasMetadata).ThenByDescending(c => !c.HasMetadata ? "" : ((dynamic)c.Metadata).Title);
                 break;
             case "Upload asc":
-                images = images.OrderBy(c => c.LastModificationTime);
+                images = images.OrderBy(c => c.Modified);
                 break;
             case "Upload desc":
-                images = images.OrderByDescending(c => c.LastModificationTime);
+                images = images.OrderByDescending(c => c.Modified);
                 break;
         }
 
 
         <div class="sc-element">
-            @Edit.Toolbar(album, actions: "edit")
+            @Edit.Toolbar(album)
             @if (albSettings.HeadingType != "hidden")
             {
                 @Html.Raw("<" + albSettings.HeadingType + ">")
