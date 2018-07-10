@@ -4,7 +4,10 @@
   "description": "A simple, easy to customize app for DNN (DotNetNuke) based on the awesome blueimp gallery",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run start-all",
+    "start-bs3": "gulp watch-sass-bs3",
+    "start-bs4": "gulp watch-sass-bs4",
+    "start-all": "gulp"
   },
   "keywords": [
     "dnn",

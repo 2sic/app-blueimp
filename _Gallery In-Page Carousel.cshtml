@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="@App.Path/dist/lib/blueimp/css/blueimp-gallery.min.css" data-enableoptimizations="true" />
-<script type="text/javascript" src="@App.Path/dist/lib/blueimp/js/blueimp-gallery.min.js" data-enableoptimizations="bottom"></script>
+<script type="text/javascript" src="@App.Path/dist/lib/blueimp/js/jquery.blueimp-gallery.min.js" data-enableoptimizations="bottom"></script>
 <link rel="stylesheet" href="@App.Path/dist/app/view.css" data-enableoptimizations="true" />
 
 <div class="sc-element">
@@ -10,7 +10,7 @@
 <div id="blueimp-gallery-items-@Dnn.Module.ModuleID" style="display:none;">
     @foreach (var pic in AsAdam(Content, "Images").Files)
     {
-        <a href="@pic.Url?w=@App.Settings.CarouselImageWidth&h=@App.Settings.CarouselImageHeight&mode=crop" title="@(((dynamic)pic.Metadata).Title)" data-gallery="#blueimp-gallery-@Dnn.Module.ModuleID">
+        <a href="@pic.Url?w=@App.Settings.CarouselImageWidth&h=@App.Settings.CarouselImageHeight&mode=crop&scale=both&quality=90" title="@(((dynamic)pic.Metadata).Title)" data-gallery="#blueimp-gallery-@Dnn.Module.ModuleID">
             @(((dynamic)pic.Metadata).Title)
         </a>
     }
