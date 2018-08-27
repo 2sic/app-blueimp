@@ -1,6 +1,6 @@
 {
-  "name": "2sxc-app-blueimp-for-dnn",
-  "version": "3.0.0",
+  "name": "blueimp-gallery",
+  "version": "4.0.0",
   "description": "A simple, easy to customize app for DNN (DotNetNuke) based on the awesome blueimp gallery",
   "main": "index.js",
   "scripts": {
