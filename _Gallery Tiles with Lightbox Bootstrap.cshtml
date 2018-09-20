@@ -6,6 +6,12 @@
 <link rel="stylesheet" href="@App.Path/dist/@(Koi.PickCss("bs3,bs4", "bs3")).css" data-enableoptimizations="true" />
 <script src="@App.Path/dist/script.js" data-enableoptimizations="true" ></script>
 
+@if (!String.IsNullOrEmpty(Request.QueryString["album"]))
+{
+    <style>
+        .ly-col-leftpane { display: none; }
+    </style>
+}
 
 @{
     var album = Content;
@@ -34,6 +40,7 @@
             pageObj.Title = album.Title + " | " + pageObj.Title;
         }
     }
+    
     //pageHandler
     if (pageHandler != null && tp != null)
     {
@@ -67,9 +74,11 @@
                 images = images.OrderBy(c => !c.HasMetadata).ThenByDescending(c => !c.HasMetadata ? "" : ((dynamic)c.Metadata).Title);
                 break;
             case "Upload asc":
+                @* If you use a 2sxc older than 9.2, use c.LastModificationTime instead of c.Modified *@
                 images = images.OrderBy(c => c.Modified);
                 break;
             case "Upload desc":
+                @* If you use a 2sxc older than 9.2, use c.LastModificationTime instead of c.Modified *@
                 images = images.OrderByDescending(c => c.Modified);
                 break;
         }
