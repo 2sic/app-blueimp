@@ -1,6 +1,6 @@
 {
   "name": "blueimp-gallery",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "A simple, easy to customize app for DNN (DotNetNuke) based on the awesome blueimp gallery",
   "main": "index.js",
   "scripts": {

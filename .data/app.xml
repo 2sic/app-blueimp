@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="09.32.01" ExportDate="2018-08-27T13:27:31.4448815+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="09.32.01" ExportDate="2018-09-21T09:54:14.6176181+02:00">
   <Header>
     <App Guid="76fde5a1-7a9d-4e60-ab98-9f17930bfbfb" />
     <Language Default="en-US" />
@@ -720,7 +720,7 @@
         <Dimension DimensionID="110" ReadOnly="false" />
         <Dimension DimensionID="109" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredVersion" Value="08.03.00" Type="String">
+      <Value Key="RequiredVersion" Value="09.22.00" Type="String">
         <Dimension DimensionID="110" ReadOnly="false" />
         <Dimension DimensionID="109" ReadOnly="false" />
       </Value>
@@ -728,7 +728,7 @@
         <Dimension DimensionID="110" ReadOnly="false" />
         <Dimension DimensionID="109" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="04.00.00" Type="String">
+      <Value Key="Version" Value="04.00.01" Type="String">
         <Dimension DimensionID="110" ReadOnly="false" />
         <Dimension DimensionID="109" ReadOnly="false" />
       </Value>
@@ -1126,6 +1126,14 @@
         <Dimension DimensionID="109" ReadOnly="false" />
       </Value>
     </Entity>
+    <Entity AssignmentObjectType="CmsObject" AttributeSetStaticName="91acbec1-ba5b-44ec-84f3-2e1c1ad850eb" AttributeSetName="ImageMetadata" EntityGUID="9f2611ba-25ca-4f93-8402-d35ad97c3ae5" KeyString="file:1247">
+      <Value Key="Description" Value="Tests" Type="String">
+        <Dimension DimensionID="109" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Test" Type="String">
+        <Dimension DimensionID="109" ReadOnly="false" />
+      </Value>
+    </Entity>
   </Entities>
   <PortalFiles>
     <File Id="1246" RelativePath="adam\blueimp Gallery\kBlTi7EW70eEacfL5NkuyQ\AlbumThumbnail\Platzhalterbilder_Linkbox-15.jpg" />
@@ -1148,6 +1156,8 @@
     <Folder Id="2546" RelativePath="adam/blueimp Gallery/_OrPrj1zSkScvveoyfbuvw/Images/" />
     <Folder Id="2547" RelativePath="adam/blueimp Gallery/-0ZpsWKcHk2BNUik4qtDIQ/" />
     <Folder Id="2548" RelativePath="adam/blueimp Gallery/-0ZpsWKcHk2BNUik4qtDIQ/Images/" />
+    <Folder Id="2601" RelativePath="adam/blueimp Gallery/1FMvxnR5tEu6ABg6fs8wZw/" />
+    <Folder Id="2602" RelativePath="adam/blueimp Gallery/1FMvxnR5tEu6ABg6fs8wZw/Images/" />
     <Folder Id="2549" RelativePath="adam/blueimp Gallery/3ICO_RPq3UGg7ZalAseAqA/" />
     <Folder Id="2550" RelativePath="adam/blueimp Gallery/3ICO_RPq3UGg7ZalAseAqA/Images/" />
     <Folder Id="2551" RelativePath="adam/blueimp Gallery/3iDQlPQiS0OnGBq1yjf41Q/" />
@@ -1156,6 +1166,8 @@
     <Folder Id="2554" RelativePath="adam/blueimp Gallery/4VQgkR5uSEqT1Dx_8jWO5g/Images/" />
     <Folder Id="2555" RelativePath="adam/blueimp Gallery/5YRXTZVBuU6yYM47TXBvHw/" />
     <Folder Id="2556" RelativePath="adam/blueimp Gallery/5YRXTZVBuU6yYM47TXBvHw/Images/" />
+    <Folder Id="2596" RelativePath="adam/blueimp Gallery/6W_2tRpbXU6kjB822ZUvIQ/" />
+    <Folder Id="2598" RelativePath="adam/blueimp Gallery/6W_2tRpbXU6kjB822ZUvIQ/Images/" />
     <Folder Id="2557" RelativePath="adam/blueimp Gallery/axO4Cpigm0e2J63gvW2qzw/" />
     <Folder Id="2558" RelativePath="adam/blueimp Gallery/axO4Cpigm0e2J63gvW2qzw/Images/" />
     <Folder Id="2559" RelativePath="adam/blueimp Gallery/dz0ukBHeM0uS_pqu42473w/" />
@@ -1166,6 +1178,8 @@
     <Folder Id="2564" RelativePath="adam/blueimp Gallery/GjP-qEyMd0G5IRclUy_tVg/Images/" />
     <Folder Id="2565" RelativePath="adam/blueimp Gallery/JQ6gwhmZuUyngwf_cgTlfg/" />
     <Folder Id="2566" RelativePath="adam/blueimp Gallery/JQ6gwhmZuUyngwf_cgTlfg/Images/" />
+    <Folder Id="2590" RelativePath="adam/blueimp Gallery/jVGwOE3PUEadmEpIolj4Ow/" />
+    <Folder Id="2592" RelativePath="adam/blueimp Gallery/jVGwOE3PUEadmEpIolj4Ow/Images/" />
     <Folder Id="2541" RelativePath="adam/blueimp Gallery/kBlTi7EW70eEacfL5NkuyQ/" />
     <Folder Id="2567" RelativePath="adam/blueimp Gallery/kFHiXc6MZkqQhRQ35523uQ/" />
     <Folder Id="2568" RelativePath="adam/blueimp Gallery/kFHiXc6MZkqQhRQ35523uQ/Images/" />
@@ -1177,5 +1191,7 @@
     <Folder Id="2574" RelativePath="adam/blueimp Gallery/U9BwZxYkFkqzDxkhLNEaFQ/Images/" />
     <Folder Id="2575" RelativePath="adam/blueimp Gallery/v4vi4MHhIk2_x3C7Se75EA/" />
     <Folder Id="2576" RelativePath="adam/blueimp Gallery/v4vi4MHhIk2_x3C7Se75EA/Images/" />
+    <Folder Id="2593" RelativePath="adam/blueimp Gallery/VN9BwuwuzUm_zu1FshgyTg/" />
+    <Folder Id="2595" RelativePath="adam/blueimp Gallery/VN9BwuwuzUm_zu1FshgyTg/Images/" />
   </PortalFolders>
 </SexyContent>
