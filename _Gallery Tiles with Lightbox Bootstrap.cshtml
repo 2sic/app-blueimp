@@ -40,16 +40,6 @@
             pageObj.Title = album.Title + " | " + pageObj.Title;
         }
     }
-    
-    //pageHandler
-    if (pageHandler != null && tp != null)
-    {
-    
-        if (!String.IsNullOrEmpty(album.Title))
-        {
-            pageHandler.Title = album.Title + " | " + Dnn.Module.ParentTab.TabName + " | " + Dnn.Portal.PortalName;
-        }
-    }
 
     if (album != null)
     {
@@ -114,8 +104,8 @@
                     }
                     <a href="@pic.Url?w=@App.Settings.LightboxImageWidth&h=@App.Settings.LightboxImageHeight&mode=max" title="@(((dynamic)pic.Metadata).Title)" data-gallery="#blueimp-gallery-@Dnn.Module.ModuleID-@album.path">
                         <span class="ga-img">
-                        <span class="overlay"></span>
-                        <img @Koi.Class("bs3='img-responsive' bs4,oth='img-fluid'") src="@pic.Url?w=@App.Settings.ImageThumbnailWidth&h=@App.Settings.ImageThumbnailHeight&mode=crop&scale=both&quality=80" alt="@(((dynamic)pic.Metadata).Title)" />
+                            <span class="overlay"></span>
+                            <img @Koi.Class("bs3='img-responsive' bs4,oth='img-fluid'") src="@pic.Url?w=@App.Settings.ImageThumbnailWidth&h=@App.Settings.ImageThumbnailHeight&mode=crop&scale=both&quality=80" alt="@(((dynamic)pic.Metadata).Title)" />
                         </span>
                     </a>
 
